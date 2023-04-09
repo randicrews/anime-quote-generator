@@ -14,20 +14,19 @@ root.addEventListener('mousemove', e => {
    
    root.style.setProperty('--h', x)
 });
-// function randomChar(){
-//     let anime = document.querySelector('input').value
-//     const url = ('https://animechan.vercel.app/api/random/')
-//     fetch(url)
-//     .then(res => res.json()) // parse response as JSON
-//     .then(data => {
-//         document.querySelector('h3').innerText = ` what would ${data.character} say?`
-//         console.log(data)
-//     })
-//     .catch(err => {
-//         console.log(`error ${err}`)
-//     });
-// }
-// randomChar()
+function randomChar(){
+    const url = ('https://animechan.vercel.app/api/random')
+    fetch(url)
+    .then(res => res.json()) // parse response as JSON
+    .then(data => {
+        console.log(data)
+        
+    })
+    .catch(err => {
+        console.log(`error ${err}`)
+    });
+}
+randomChar()
 function getQuote(){
     let anime = document.querySelector('input').value
     const url = (`https://animechan.vercel.app/api/random/anime?title=${anime}
@@ -45,7 +44,7 @@ function getQuote(){
             data.quote =''
         }
         document.querySelector('h1').innerText = data.anime
-        document.querySelector('h2').innerText = data.character
+        document.querySelector('h2').innerText = ` - ${data.character } `
         document.querySelector('h3').innerText = `" ${data.quote} "`
     //   document.querySelector('h3').innerText = data.explanation
     //   document.querySelector('img').src = data.hdurl
