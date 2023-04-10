@@ -19,6 +19,7 @@ function randomChar(){
     fetch(url)
     .then(res => res.json()) // parse response as JSON
     .then(data => {
+        document.querySelector('h3').innerText = ` What would ${data.character} say?`
         console.log(data)
         
     })
